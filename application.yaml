@@ -14,4 +14,4 @@ microservice:
   order-service:
     endpoints:
       uri: http://localhost:8081/order//place-order
-  common: New 2, From Config server changes
+  common: New 33, From Config server changes
