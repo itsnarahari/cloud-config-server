@@ -1,17 +1,27 @@
+jwt:
+  secret: 926D96C90030DD58429D2751AC1BDBBC
+  exipryTimeInMillis: 3600
 eureka:
   client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info
+app:
+  props:
+    name: ${spring.application.name}
+    id: ${spring.application.id}
+    port: ${server.port}
+    description: ${spring.application.description}
+    version: @project.version@
 
-microservice:
-  payment-service:
-    endpoints:
-      uri: http://localhost:8082/payment/doPayment
-  order-service:
-    endpoints:
-      uri: http://localhost:8081/order//place-order
-  common: New 33, From Config server changes
+endpoints:
+  catalog: http://CATALOG-SERVICE/catalog
+  payment: http://PAYMENT-SERVICE/payment
