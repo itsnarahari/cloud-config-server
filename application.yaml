@@ -20,8 +20,7 @@ app:
     id: ${spring.application.id}
     port: ${server.port}
     description: ${spring.application.description}
-    version: @project.version@
-
+    
 endpoints:
   catalog: http://CATALOG-SERVICE/catalog
   payment: http://PAYMENT-SERVICE/payment
